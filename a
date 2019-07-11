@@ -1,0 +1,65 @@
+[33mcommit b9ff9cc51eea86742396fbd8c49ab9bf81000278[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: edivaldo.va@gmail.com <edivaldo.va@gmail.com>
+Date:   Wed Jul 10 22:57:08 2019 -0300
+
+    Adiconando telefone para as pessoas
+
+[33mcommit 374d22e346d11115e689f81b517f63f1f189a176[m
+Author: edivaldo.va@gmail.com <edivaldo.va@gmail.com>
+Date:   Wed Jul 10 21:58:37 2019 -0300
+
+    Criado classe e interface telefone e seus relacionamentos com pessoas
+
+[33mcommit 6fae3ccdecbaab4c4e029961b98d13bd7c42a3d6[m
+Author: edivaldo.va@gmail.com <edivaldo.va@gmail.com>
+Date:   Wed Jul 10 21:09:03 2019 -0300
+
+    Add tela cadastro telefones lincada nos nomes pessoas
+
+[33mcommit 611f65ffbe7fc9ccc8936c7620f530e001b87e6c[m
+Author: edivaldo.va@gmail.com <edivaldo.va@gmail.com>
+Date:   Wed Jul 10 20:10:16 2019 -0300
+
+    Aplicando layout Materialize na página
+
+[33mcommit df97fa726906a1052526ffbf4cc66be52ccd9153[m
+Author: edivaldo.va@gmail.com <edivaldo.va@gmail.com>
+Date:   Wed Jul 10 09:39:33 2019 -0300
+
+    Criada pesquisa por nome
+
+[33mcommit 9587a73339f76e76aecb245940eec72f6dea2818[m
+Author: edivaldo.va@gmail.com <edivaldo.va@gmail.com>
+Date:   Wed Jul 10 08:53:19 2019 -0300
+
+    Editando e excluindo pessoas concluído
+
+[33mcommit 9103aca46b030a127b60a406589cfd86df84235e[m
+Author: edivaldo.va@gmail.com <edivaldo.va@gmail.com>
+Date:   Sat Jul 6 08:03:06 2019 -0300
+
+    Instalando Materialize nas páginas web
+
+[33mcommit da75a1571456422ee1a8da3b00b4460bd6e01f8b[m
+Author: edivaldo.va@gmail.com <edivaldo.va@gmail.com>
+Date:   Fri Jul 5 16:30:04 2019 -0300
+
+    Listando pessoas
+
+[33mcommit c5cadbe3057ec4f42267028f89650a93fcdf766c[m
+Author: edivaldo.va@gmail.com <edivaldo.va@gmail.com>
+Date:   Fri Jul 5 15:43:49 2019 -0300
+
+    Primeiro cadastro completo
+
+[33mcommit aade5336aa6e7ae53b4eb2a0bc87ce9960bd8b7d[m
+Author: edivaldo.va@gmail.com <edivaldo.va@gmail.com>
+Date:   Fri Jul 5 07:57:27 2019 -0300
+
+    Configurado JPA e criado BD + tabela
+
+[33mcommit b3009f39d669ceeaf02347c06820523ff8c77e81[m
+Author: edivaldo.va@gmail.com <edivaldo.va@gmail.com>
+Date:   Thu Jul 4 14:21:00 2019 -0300
+
+    Projeto criado
