@@ -22,12 +22,12 @@ color: white;
 
 </style>
 </head>
-<body>
+<body class="container">
 	<h4>CADASTRO DE TELEFONES</h4>
 
 	<a class="waves-effect waves-light btn" href ="/cadastropessoa">Cadastro de Pessoa</a>	
 	<div th:each="p: ${pessoaobj}"> <!-- variável p: é para tela e ${pessoaob} vem do servidor -->
-		<div class="row">
+		<div class="flow-text">
 			<p>ID: <span th:text="${p.id}"></span></p>
 			<p>Nome: <span th:text="${p.nome}"></span></p>
 			<p>Sobrenome: <span th:text="${p.sobrenome}"></span></p>
