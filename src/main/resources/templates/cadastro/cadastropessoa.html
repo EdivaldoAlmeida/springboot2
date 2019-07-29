@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 <meta charset="UTF-8"></meta>
 <title>Insert title here</title>
@@ -49,7 +50,7 @@ color: white;
 				</div>
 			</div>
 
-			<div class="row">
+			<div class="row" sec:authorize="hasRole('ROLE_ADMIN')"> <!-- Permite acesso a este DIV apenas ao ADMIN. P/ permitir acesso a mais de um tipo de usuário: 'hasAnyRole' -->
 				<div class="input-field col s12">
 					 <input name="idade" id="idade" th:field="*{idade}" class="validate" required="required"></input>
 					 <label for="idade" class="active">Idade:</label>
