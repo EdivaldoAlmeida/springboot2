@@ -27,9 +27,9 @@ public class PessoaController {
 	@RequestMapping(method = RequestMethod.GET, value = "/cadastropessoa")
 	public ModelAndView inicio() {
 		ModelAndView modelAndView = new ModelAndView("cadastro/cadastropessoa");
-		modelAndView.addObject("pessoaobj", new Pessoa());
-		modelAndView.addObject("pessoas", pessoaRepository.findAll()); /*Essas duas linhas carregam todas*/
-		modelAndView.addObject("pessoaobj", new Pessoa());			/*as pessoas ao abrir a tela de cadastro*/
+		modelAndView.addObject("pessoaobj", new Pessoa()); //Ver se o erro era aqui
+//		modelAndView.addObject("pessoas", pessoaRepository.findAll()); /*Essas duas linhas carregam todas*/
+//		modelAndView.addObject("pessoaobj", new Pessoa());			/*as pessoas ao abrir a tela de cadastro*/
 		return modelAndView;
 	}
 	
@@ -40,7 +40,7 @@ public class PessoaController {
 	@RequestMapping(method = RequestMethod.POST, value = "**/salvarpessoa") /*Os dois ** ignoram tudo que vem antes de salvarpessoa*/
 	public ModelAndView salvar(Pessoa pessoa) {
 		pessoaRepository.save(pessoa);
-		
+			
 		/*Já irá retornar a lista de pessas após salvar*/
 		ModelAndView andView = new ModelAndView("cadastro/cadastropessoa");
 		Iterable<Pessoa> pessoasIt = pessoaRepository.findAll();
@@ -67,7 +67,7 @@ public class PessoaController {
 		
 		ModelAndView modelAndView = new ModelAndView("cadastro/cadastropessoa");
 		Pessoa pessoa = pessoaRepository.findOne(idpessoa);
-		modelAndView.addObject("pessoaobj", pessoa);
+		modelAndView.addObject("pessoaobj", pessoa); 
 		
 		return modelAndView;
 
