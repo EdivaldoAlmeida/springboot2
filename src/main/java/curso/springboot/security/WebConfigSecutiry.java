@@ -11,8 +11,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-@Configuration
-@EnableWebSecurity
+@Configuration 		
+@EnableWebSecurity   
 public class WebConfigSecutiry extends WebSecurityConfigurerAdapter{
 	
 	@Autowired
@@ -25,6 +25,7 @@ public class WebConfigSecutiry extends WebSecurityConfigurerAdapter{
 		.disable() //Desativa as configurações padrão de memória do spring.
 		.authorizeRequests()  // Permite restringir acessos.
 		.antMatchers(HttpMethod.GET, "/").permitAll() //Qualquer usuário acessa a pág. inicial
+		.antMatchers(HttpMethod.GET, "/cadastropessoa").hasAnyRole("ADMIN") //Apenas ADMIN terá acesso ao form. Cad. Pessoas
 		.anyRequest().authenticated()
 		.and().formLogin().permitAll() // permite qualquer usuário
 		.and().logout() // Mapeia URL de logout e invalida usuário autenticado

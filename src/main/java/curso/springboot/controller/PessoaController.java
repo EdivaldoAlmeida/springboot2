@@ -28,7 +28,7 @@ public class PessoaController {
 	public ModelAndView inicio() {
 		ModelAndView modelAndView = new ModelAndView("cadastro/cadastropessoa");
 		modelAndView.addObject("pessoaobj", new Pessoa()); //Ver se o erro era aqui
-//		modelAndView.addObject("pessoas", pessoaRepository.findAll()); /*Essas duas linhas carregam todas*/
+		modelAndView.addObject("pessoas", pessoaRepository.findAll()); /*Essas duas linhas carregam todas*/
 //		modelAndView.addObject("pessoaobj", new Pessoa());			/*as pessoas ao abrir a tela de cadastro*/
 		return modelAndView;
 	}
