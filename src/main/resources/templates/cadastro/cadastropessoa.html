@@ -49,74 +49,73 @@ color: white;
 				</div>
 
 				<div class="input-field col s6">
-					<input name="nome" th:field="*{nome}" id="nome" type="text" class="validate" required="required"></input>
-					<label for="nome" class="active">Nome:</label> 
+					<input placeholder="Informe o nome da pessoa" name="nome" th:field="*{nome}" id="nome" type="text" class="validate" required="required"></input>
+					<label for="nome" class="active">NOME:</label> 
 				</div>
 			</div>
 
 			<div class="row">
-				<div class="input-field col s12">					
-					<input name="sobrenome" id="sobrenome" th:field="*{sobrenome}" type="text"
+				<div class="input-field col s6">					
+					<input placeholder="Informe o sobrenome da pessoa" name="sobrenome" id="sobrenome" th:field="*{sobrenome}" type="text"
 						class="validate" required="required"></input>
-					<label for="sobrenome" class="active">Sobrenome:</label> 
+					<label for="sobrenome" class="active">SOBRENOME:</label> 
+				</div>
+
+					<!-- Permite acesso a este DIV apenas ao ADMIN. P/ permitir acesso a mais de um tipo de usuário: 'hasAnyRole' -->
+					<div class="input-field col s6" sec:authorize="hasRole('ROLE_ADMIN')">
+						<input name="idade" id="idade" th:field="*{idade}"
+							class="validate" required="required"></input> <label for="idade"
+							class="active">IDADE:</label>
+					</div>
+			</div>
+			
+			<div class="row">
+			
+				<div class="input-field col s6">
+					<input placeholder="Informe o cep" name="cep" id="cep" th:field="*{cep}"
+						type="text" class="validate" required="required"></input>
+						<label for="cep" class="active">CEP:</label>
+				</div>
+
+				<div class="input-field col s6">
+					<input placeholder="Informe a rua da pessoa" name="rua" id="rua" th:field="*{rua}"
+						type="text" class="validate" required="required"></input> <label
+						for="rua" class="active">RUA:</label>
 				</div>
 			</div>
-
+		
 			<div class="row">
-				<div class="input-field col s12">
-					<input name="cep" id="cep" th:field="*{cep}"
+		
+				<div class="input-field col s6">
+					<input placeholder="Informe o bairro da pessoa" name="bairro" id="bairro" th:field="*{bairro}"
 						type="text" class="validate" required="required"></input> <label
-						for="cep" class="active">Cep:</label>
+						for="bairro" class="active">BAIRRO:</label>
+				
+				</div>			
+
+				<div class="input-field col s6">
+					<input placeholder="Informe a cidade da pessoa" name="cidade" id="cidade" th:field="*{cidade}"
+						type="text" class="validate" required="required"></input> <label
+						for="cidade" class="active">CIDADE:</label>
 				</div>
+				
 			</div>
 
-			<div class="row">
-				<div class="input-field col s12">
-					<input name="rua" id="rua" th:field="*{rua}"
-						type="text" class="validate" required="required"></input> <label
-						for="rua" class="active">Rua:</label>
-				</div>
-			</div>			
 
 			<div class="row">
-				<div class="input-field col s12">
-					<input name="bairro" id="bairro" th:field="*{bairro}"
-						type="text" class="validate" required="required"></input> <label
-						for="bairro" class="active">Bairro:</label>
-				</div>
-			</div>			
-
-			<div class="row">
-				<div class="input-field col s12">
-					<input name="cidade" id="cidade" th:field="*{cidade}"
-						type="text" class="validate" required="required"></input> <label
-						for="cidade" class="active">Cidade:</label>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="input-field col s12">
-					<input name="uf" id="uf" th:field="*{uf}"
+				<div class="input-field col s6">
+					<input placeholder="Informe o estado da pessoa" name="uf" id="uf" th:field="*{uf}"
 						type="text" class="validate" required="required"></input> <label
 						for="uf" class="active">UF:</label>
 				</div>
-			</div>
 
-			<div class="row">
-				<div class="input-field col s12">
-					<input name="ibge" id="ibge" th:field="*{ibge}"
+				<div class="input-field col s6">
+					<input placeholder="Informe o número do IBGE do endereço" name="ibge" id="ibge" th:field="*{ibge}"
 						type="text" class="validate" required="required"></input> <label
 						for="ibge" class="active">IBGE:</label>
 				</div>
 			</div>			
 
-
-			<div class="row" sec:authorize="hasRole('ROLE_ADMIN')"> <!-- Permite acesso a este DIV apenas ao ADMIN. P/ permitir acesso a mais de um tipo de usuário: 'hasAnyRole' -->
-				<div class="input-field col s12">
-					 <input name="idade" id="idade" th:field="*{idade}" class="validate" required="required"></input>
-					 <label for="idade" class="active">Idade:</label>
-				</div>
-			</div>
 
 			<div class="row">
 				<div class="input-field col s6">
