@@ -39,6 +39,9 @@ public class PessoaController {
 	 * */
 	@RequestMapping(method = RequestMethod.POST, value = "**/salvarpessoa") /*Os dois ** ignoram tudo que vem antes de salvarpessoa*/
 	public ModelAndView salvar(Pessoa pessoa) {
+		
+		pessoa.setTelefones(telefoneRepository.getTelefones(pessoa.getId())); //Tem que carregar os telefones antes de qualquer ação
+		
 		pessoaRepository.save(pessoa);
 			
 		/*Já irá retornar a lista de pessas após salvar*/

@@ -85,7 +85,7 @@ public class Pessoa implements Serializable {
 		this.uf = uf;
 	}
 
-	@OneToMany(mappedBy = "pessoa")// orphanRemoval = true, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "pessoa", orphanRemoval = true, cascade = CascadeType.ALL)
 	private List<Telefone> telefones;
 	
 	@Column(columnDefinition="int default 0") 
