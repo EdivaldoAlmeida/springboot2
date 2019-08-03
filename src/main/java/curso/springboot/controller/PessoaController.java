@@ -102,10 +102,44 @@ public class PessoaController {
 	public void imprimePdf(@RequestParam("nomepesquisa") String nomepesquisa,
 			@RequestParam("pesqsexo") String pesqsexo,
 			HttpServletRequest request,
-			HttpServletResponse response) {
+			HttpServletResponse response) throws Exception{
 		
-		System.out.println("FUNCIONOU!!!");
+		List<Pessoa> pessoas = new ArrayList<Pessoa>();
 		
+		if (pesqsexo != null && !pesqsexo.isEmpty()
+				&& nomepesquisa != null && !nomepesquisa.isEmpty()) { /*Busca por nome e sexo*/
+			pessoas = pessoaRepository.findPessoaByNameSexo(nomepesquisa, pesqsexo);
+			
+		}else if(nomepesquisa != null && !nomepesquisa.isEmpty()) { /*Busca por nome*/
+			pessoas = pessoaRepository.findPessoaByName(nomepesquisa);
+			
+			}else if(pesqsexo != null && !pesqsexo.isEmpty()) { /*Busca por sexo*/
+				pessoas = pessoaRepository.findPessoaBySexo(pesqsexo);
+				
+				}else {
+				Iterable<Pessoa> iterator = pessoaRepository.findAll();
+				for (Pessoa pessoa : iterator) { /*Busca todos*/
+					pessoas.add(pessoa);
+					
+				}
+			}
+		
+		/*Chama o serviço que faz a geração do relatório*/
+		byte[] pdf = ReportUtil.gerarRelatorio(pessoas, "pessoa", request.getServletContext());
+		
+		/*Tamanho da resposta para o navegador*/
+		response.setContentLength(pdf.length);
+		
+		/*Definir na resposta o tipo de arquivo*/
+		response.setContentType("application/octet-stream");
+		
+		/*Definir o cabeçalho da resposta*/
+		String headerKey = "Content-Disposition";
+		String headerValue = String.format("attachment; filename=\"%s\"", "relatorio.pdf");
+		response.setHeader(headerKey, headerValue);
+		
+		/*Finaliza a resposta ao negavador*/
+		response.getOutputStream().write(pdf);
 	}
 	
 	@PostMapping("**/pesquisarpessoa")
