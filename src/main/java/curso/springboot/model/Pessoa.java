@@ -25,6 +25,8 @@ public class Pessoa implements Serializable {
 	
 	private String sobrenome;
 	
+	private String sexopessoa;
+	
 	private String cep;
 	
 	private String rua;
@@ -36,6 +38,14 @@ public class Pessoa implements Serializable {
 	private String uf;
 	
 	private String ibge;
+	
+	public String getSexopessoa() {
+		return sexopessoa;
+	}
+	
+	public void setSexopessoa(String sexopessoa) {
+		this.sexopessoa = sexopessoa;
+	}
 	
 	public String getIbge() {
 		return ibge;

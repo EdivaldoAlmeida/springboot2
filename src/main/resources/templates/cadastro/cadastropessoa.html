@@ -62,11 +62,20 @@ color: white;
 				</div>
 
 					<!-- Permite acesso a este DIV apenas ao ADMIN. P/ permitir acesso a mais de um tipo de usuário: 'hasAnyRole' -->
-					<div class="input-field col s6" sec:authorize="hasRole('ROLE_ADMIN')">
+					<div class="input-field col s3" sec:authorize="hasRole('ROLE_ADMIN')">
 						<input name="idade" id="idade" th:field="*{idade}"
 							class="validate" required="required"></input> <label for="idade"
 							class="active">IDADE:</label>
 					</div>
+					
+					<div class="input-field col s3">					
+					<label for="sexopessoa" class="active">SEXO:</label> 
+						<select class="browser-default" th:field="*{sexopessoa}">
+							<option value="" desabled = "selected">--[Selecione]--</option>
+							<option value="MASCULINO" th:text="Masculino" />
+							<option value="FEMININO" th:text="Feminino" />
+						</select>
+				</div>
 			</div>
 			
 			<div class="row">
