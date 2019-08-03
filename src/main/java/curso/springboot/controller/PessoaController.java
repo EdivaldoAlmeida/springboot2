@@ -3,6 +3,9 @@ package curso.springboot.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,6 +29,9 @@ public class PessoaController {
 		
 	@Autowired
 	private TelefoneRepository telefoneRepository;
+	
+	@Autowired
+	private ReportUtil ReportUtil;
 
 	@RequestMapping(method = RequestMethod.GET, value = "/cadastropessoa")
 	public ModelAndView inicio() {
@@ -92,6 +98,16 @@ public class PessoaController {
 
 	}
 	
+	@GetMapping("**/pesquisarpessoa")
+	public void imprimePdf(@RequestParam("nomepesquisa") String nomepesquisa,
+			@RequestParam("pesqsexo") String pesqsexo,
+			HttpServletRequest request,
+			HttpServletResponse response) {
+		
+		System.out.println("FUNCIONOU!!!");
+		
+	}
+	
 	@PostMapping("**/pesquisarpessoa")
 	public ModelAndView pesquisar(@RequestParam("nomepesquisa") String nomepesquisa,
 			@RequestParam("pesqsexo") String pesqsexo) {
@@ -111,6 +127,7 @@ public class PessoaController {
 		return modelAndView;
 
 	}
+	
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/telefones/{idpessoa}") /*Intercepta os telefones*/
 	public ModelAndView telefones(@PathVariable("idpessoa") Long idpessoa) {
